@@ -97,5 +97,11 @@ ENUM_LOWERINGOPT(FPMaxminBehavior, Fortran::common::FPMaxminBehavior, 2, 0)
 /// 0 means no trapping. Bit values match IEEE_FLAG_TYPE encoding.
 ENUM_LOWERINGOPT(FPExceptionTraps, unsigned, 8, 0)
 
+/// If true, pass assumed-shape, deferred-shape, and assumed-rank BIND(C)
+/// dummy arguments by address instead of a Fortran 2018 CFI descriptor
+/// (legacy interoperability convention). Default: false (use the standard
+/// CFI descriptor).
+ENUM_LOWERINGOPT(NoCFIDescriptor, unsigned, 1, 0)
+
 #undef LOWERINGOPT
 #undef ENUM_LOWERINGOPT
